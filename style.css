@@ -1,0 +1,205 @@
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  color: #1c1c1c;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #1c1c1c;
+  color: #f4f4f4;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-nome {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-nome img {
+  width: 40px;
+}
+
+.titulo-site {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 6px;
+}
+
+.menu li a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #f4f4f4;
+  cursor: pointer;
+}
+
+.parallax {
+  background-image: url('imagens/parallax.jpg');
+  height: 60vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  cursor: zoom-in;
+  opacity: 0.95;
+}
+
+.galeria img:hover {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+footer {
+  padding: 2rem 1rem;
+  background-color: #202020;
+  color: #dddddd;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.redes img {
+  width: 24px;
+  margin: 0 8px;
+  filter: brightness(0.85);
+  transition: transform 0.2s ease;
+}
+
+.redes img:hover {
+  transform: scale(1.2);
+  filter: brightness(1);
+}
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.lightbox-content .fechar {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu li {
+    padding: 0.5rem 0;
+  }
+
+  .menu li a {
+    width: 100%;
+    padding: 0.5rem;
+    display: block;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  .redes img {
+    width: 28px;
+  }
+
+  .lightbox-content img {
+    width: 95vw;
+  }
+}
